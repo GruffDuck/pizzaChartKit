@@ -1,6 +1,6 @@
 # React Native Pizza Chart
 
-<img src="https://raw.githubusercontent.com/GruffDuck/pizzaChartKit/main/src/assets/ss.png" alt="Pizza Chart Demo" width="300" />
+![Pizza Chart Demo](https://imgur.com/ttJCh8E)
 
 A customizable and animated pizza chart component for React Native applications.
 
@@ -35,13 +35,13 @@ yarn add react-native-svg
 
 ```jsx
 import React from 'react';
-import { View, SafeAreaView } from 'react-native';
-import { StorageChart, defaultStorageData } from 'react-native-pizza-chart';
+import {View, SafeAreaView} from 'react-native';
+import {StorageChart, defaultStorageData} from 'react-native-pizza-chart';
 
 const App = () => {
   return (
-    <SafeAreaView style={{ flex: 1 }}>
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+    <SafeAreaView style={{flex: 1}}>
+      <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
         <StorageChart
           data={defaultStorageData}
           totalStorage={100}
@@ -63,17 +63,17 @@ export default App;
 
 ## Props
 
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `data` | `StorageItem[]` | Required | Array of data items to display in the chart |
-| `totalStorage` | `number` | `128` | Total storage capacity |
-| `animationDuration` | `number` | `1000` | Duration of the animation in milliseconds |
-| `animationSpeed` | `number` | `1` | Speed multiplier for the animation |
-| `showLegend` | `boolean` | `true` | Whether to show the legend |
-| `showEmptySpace` | `boolean` | `false` | Whether to show empty space as a slice |
-| `showPizza` | `boolean` | `true` | Whether to show the pizza slices |
-| `title` | `string` | `'Storage Chart'` | Title of the chart |
-| `emptySpaceTitle` | `string` | `'Empty Space'` | Title for the empty space slice |
+| Prop                | Type            | Default           | Description                                 |
+| ------------------- | --------------- | ----------------- | ------------------------------------------- |
+| `data`              | `StorageItem[]` | Required          | Array of data items to display in the chart |
+| `totalStorage`      | `number`        | `128`             | Total storage capacity                      |
+| `animationDuration` | `number`        | `1000`            | Duration of the animation in milliseconds   |
+| `animationSpeed`    | `number`        | `1`               | Speed multiplier for the animation          |
+| `showLegend`        | `boolean`       | `true`            | Whether to show the legend                  |
+| `showEmptySpace`    | `boolean`       | `false`           | Whether to show empty space as a slice      |
+| `showPizza`         | `boolean`       | `true`            | Whether to show the pizza slices            |
+| `title`             | `string`        | `'Storage Chart'` | Title of the chart                          |
+| `emptySpaceTitle`   | `string`        | `'Empty Space'`   | Title for the empty space slice             |
 
 ## Data Format
 
@@ -81,12 +81,12 @@ Each item in the `data` array should follow this format:
 
 ```typescript
 type StorageItem = {
-  name: string;       // Name of the item
-  size: number;       // Size of the item
-  color: string;      // Main color (hex or rgba)
+  name: string; // Name of the item
+  size: number; // Size of the item
+  color: string; // Main color (hex or rgba)
   gradientStart: string; // Gradient start color
-  gradientEnd: string;   // Gradient end color
-  innerColor: string;    // Color for the inner part of the slice
+  gradientEnd: string; // Gradient end color
+  innerColor: string; // Color for the inner part of the slice
 };
 ```
 
@@ -118,7 +118,7 @@ const customData = [
 ];
 
 // Then use it in your component
-<StorageChart data={customData} totalStorage={128} />
+<StorageChart data={customData} totalStorage={128} />;
 ```
 
 ## License
