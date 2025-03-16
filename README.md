@@ -1,8 +1,8 @@
 # React Native Pizza Chart
 
-A customizable and animated pizza chart component for React Native applications.
+![Pizza Chart Demo](./src/assets/ss.png)
 
-![Pizza Chart Demo](https://via.placeholder.com/600x300.png?text=Pizza+Chart+Demo)
+A customizable and animated pizza chart component for React Native applications.
 
 ## Features
 
