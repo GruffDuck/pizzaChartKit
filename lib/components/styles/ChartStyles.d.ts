@@ -22,12 +22,12 @@ export declare const styles: {
         shadowOpacity: number;
         shadowRadius: number;
         elevation: number;
-        width: string;
+        width: "100%";
         flex: number;
     };
     chartContainerWithLegend: {
         alignItems: "center";
-        width: string;
+        width: "100%";
         flexDirection: "column";
         justifyContent: "center";
         flex: number;
@@ -61,7 +61,7 @@ export declare const styles: {
         textAlign: "center";
     };
     legendContainer: {
-        width: string;
+        width: "100%";
         marginTop: number;
         paddingHorizontal: number;
         backgroundColor: string;
