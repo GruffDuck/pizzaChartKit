@@ -1,130 +1,258 @@
+/* eslint-disable react-native/no-inline-styles */
 /**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
+ * Storage Chart Application - Test Area
  * @format
  */
 
-import React from 'react';
-import type {PropsWithChildren} from 'react';
+import React, {useState} from 'react';
 import {
-  ScrollView,
+  SafeAreaView,
   StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
   View,
+  useColorScheme,
+  Text,
+  ScrollView,
+  Switch,
+  TextInput,
+  StyleSheet,
 } from 'react-native';
-
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-
-type SectionProps = PropsWithChildren<{
-  title: string;
-}>;
-
-function Section({children, title}: SectionProps): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-  return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
-    </View>
-  );
-}
+import {StorageChart} from './src/components/PizzaChartParts';
+import {defaultStorageData} from './src/components/utils/DefaultData';
+import {styles} from './src/components/styles/ChartStyles';
 
 function App(): React.JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
 
+  // Test configuration state
+  const [showEmptySpace, setShowEmptySpace] = useState(true);
+  const [showPizza, setShowPizza] = useState(true);
+  const [showLegend, setShowLegend] = useState(true);
+  const [animationSpeed, setAnimationSpeed] = useState('2');
+  const [totalStorage, setTotalStorage] = useState('100');
+  const [title, setTitle] = useState('Storage Chart');
+  const [emptySpaceTitle, setEmptySpaceTitle] = useState('Free Space');
+
   const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
+    backgroundColor: isDarkMode ? '#121212' : '#F3F3F3',
+    flex: 1,
   };
 
-  /*
-   * To keep the template simple and small we're adding padding to prevent view
-   * from rendering under the System UI.
-   * For bigger apps the reccomendation is to use `react-native-safe-area-context`:
-   * https://github.com/AppAndFlow/react-native-safe-area-context
-   *
-   * You can read more about it here:
-   * https://github.com/react-native-community/discussions-and-proposals/discussions/827
-   */
-  const safePadding = '5%';
-
   return (
-    <View style={backgroundStyle}>
+    <SafeAreaView style={backgroundStyle}>
       <StatusBar
         barStyle={isDarkMode ? 'light-content' : 'dark-content'}
         backgroundColor={backgroundStyle.backgroundColor}
       />
-      <ScrollView
-        style={backgroundStyle}>
-        <View style={{paddingRight: safePadding}}>
-          <Header/>
+      <ScrollView style={{flex: 1}}>
+        <View style={testStyles.header}>
+          <Text
+            style={[
+              testStyles.headerText,
+              {color: isDarkMode ? '#FFFFFF' : '#333333'},
+            ]}>
+            React Native Pizza Chart - Test Area
+          </Text>
         </View>
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-            paddingHorizontal: safePadding,
-            paddingBottom: safePadding,
-          }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
+
+        <View style={testStyles.controlsContainer}>
+          <Text
+            style={[
+              testStyles.sectionTitle,
+              {color: isDarkMode ? '#FFFFFF' : '#333333'},
+            ]}>
+            Chart Configuration
+          </Text>
+
+          <View style={testStyles.controlRow}>
+            <Text
+              style={[
+                testStyles.controlLabel,
+                {color: isDarkMode ? '#FFFFFF' : '#333333'},
+              ]}>
+              Show Empty Space:
+            </Text>
+            <Switch
+              value={showEmptySpace}
+              onValueChange={setShowEmptySpace}
+              trackColor={{false: '#767577', true: '#81b0ff'}}
+              thumbColor={showEmptySpace ? '#f5dd4b' : '#f4f3f4'}
+            />
+          </View>
+
+          <View style={testStyles.controlRow}>
+            <Text
+              style={[
+                testStyles.controlLabel,
+                {color: isDarkMode ? '#FFFFFF' : '#333333'},
+              ]}>
+              Show Pizza Slices:
+            </Text>
+            <Switch
+              value={showPizza}
+              onValueChange={setShowPizza}
+              trackColor={{false: '#767577', true: '#81b0ff'}}
+              thumbColor={showPizza ? '#f5dd4b' : '#f4f3f4'}
+            />
+          </View>
+
+          <View style={testStyles.controlRow}>
+            <Text
+              style={[
+                testStyles.controlLabel,
+                {color: isDarkMode ? '#FFFFFF' : '#333333'},
+              ]}>
+              Show Legend:
+            </Text>
+            <Switch
+              value={showLegend}
+              onValueChange={setShowLegend}
+              trackColor={{false: '#767577', true: '#81b0ff'}}
+              thumbColor={showLegend ? '#f5dd4b' : '#f4f3f4'}
+            />
+          </View>
+
+          <View style={testStyles.controlRow}>
+            <Text
+              style={[
+                testStyles.controlLabel,
+                {color: isDarkMode ? '#FFFFFF' : '#333333'},
+              ]}>
+              Animation Speed:
+            </Text>
+            <TextInput
+              style={[
+                testStyles.textInput,
+                {color: isDarkMode ? '#FFFFFF' : '#333333'},
+              ]}
+              value={animationSpeed}
+              onChangeText={setAnimationSpeed}
+              keyboardType="numeric"
+              placeholder="Animation Speed"
+              placeholderTextColor={isDarkMode ? '#AAAAAA' : '#999999'}
+            />
+          </View>
+
+          <View style={testStyles.controlRow}>
+            <Text
+              style={[
+                testStyles.controlLabel,
+                {color: isDarkMode ? '#FFFFFF' : '#333333'},
+              ]}>
+              Total Storage:
+            </Text>
+            <TextInput
+              style={[
+                testStyles.textInput,
+                {color: isDarkMode ? '#FFFFFF' : '#333333'},
+              ]}
+              value={totalStorage}
+              onChangeText={setTotalStorage}
+              keyboardType="numeric"
+              placeholder="Total Storage"
+              placeholderTextColor={isDarkMode ? '#AAAAAA' : '#999999'}
+            />
+          </View>
+
+          <View style={testStyles.controlRow}>
+            <Text
+              style={[
+                testStyles.controlLabel,
+                {color: isDarkMode ? '#FFFFFF' : '#333333'},
+              ]}>
+              Chart Title:
+            </Text>
+            <TextInput
+              style={[
+                testStyles.textInput,
+                {color: isDarkMode ? '#FFFFFF' : '#333333'},
+              ]}
+              value={title}
+              onChangeText={setTitle}
+              placeholder="Chart Title"
+              placeholderTextColor={isDarkMode ? '#AAAAAA' : '#999999'}
+            />
+          </View>
+
+          <View style={testStyles.controlRow}>
+            <Text
+              style={[
+                testStyles.controlLabel,
+                {color: isDarkMode ? '#FFFFFF' : '#333333'},
+              ]}>
+              Empty Space Title:
+            </Text>
+            <TextInput
+              style={[
+                testStyles.textInput,
+                {color: isDarkMode ? '#FFFFFF' : '#333333'},
+              ]}
+              value={emptySpaceTitle}
+              onChangeText={setEmptySpaceTitle}
+              placeholder="Empty Space Title"
+              placeholderTextColor={isDarkMode ? '#AAAAAA' : '#999999'}
+            />
+          </View>
+        </View>
+
+        <View style={styles.container}>
+          <View style={styles.chartWrapper}>
+            <StorageChart
+              data={defaultStorageData}
+              totalStorage={Number(totalStorage)}
+              animationDuration={1000}
+              animationSpeed={Number(animationSpeed)}
+              showEmptySpace={showEmptySpace}
+              showPizza={showPizza}
+              showLegend={showLegend}
+              title={title}
+              emptySpaceTitle={emptySpaceTitle}
+            />
+          </View>
         </View>
       </ScrollView>
-    </View>
+    </SafeAreaView>
   );
 }
 
-const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
+const testStyles = StyleSheet.create({
+  header: {
+    padding: 16,
+    backgroundColor: '#4dabf7',
+    alignItems: 'center',
+  },
+  headerText: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: 'white',
+  },
+  controlsContainer: {
+    padding: 16,
+    backgroundColor: 'rgba(0, 0, 0, 0.05)',
+    borderRadius: 8,
+    margin: 16,
   },
   sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
+    fontSize: 16,
+    fontWeight: 'bold',
+    marginBottom: 16,
   },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
+  controlRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: 12,
   },
-  highlight: {
-    fontWeight: '700',
+  controlLabel: {
+    fontSize: 14,
+    flex: 1,
+  },
+  textInput: {
+    borderWidth: 1,
+    borderColor: '#CCCCCC',
+    borderRadius: 4,
+    padding: 8,
+    flex: 1,
+    marginLeft: 8,
   },
 });
 
