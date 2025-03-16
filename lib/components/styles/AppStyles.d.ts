@@ -16,7 +16,7 @@ export declare const appStyles: {
         shadowOpacity: number;
         shadowRadius: number;
         elevation: number;
-        width: "100%";
+        width: string;
         flex: number;
     };
 };
