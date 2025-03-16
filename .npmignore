@@ -1,0 +1,31 @@
+# Source files
+src/
+
+# Development files
+node_modules/
+.vscode/
+.idea/
+.git/
+.gitignore
+.eslintrc.js
+.prettierrc.js
+.watchmanconfig
+babel.config.js
+jest.config.js
+metro.config.js
+tsconfig.json
+
+# React Native specific
+android/
+ios/
+__tests__/
+.bundle/
+index.js
+app.json
+App.tsx
+
+# Other
+*.log
+*.lock
+Gemfile
+README.md.old 

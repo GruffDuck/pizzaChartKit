@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yourusername/react-native-pizza-chart.git"
+    "url": "git+https://github.com/GruffDuck/react-native-pizza-chart.git"
   },
   "keywords": [
     "react-native",
@@ -22,12 +22,12 @@
     "animated-chart",
     "react-native-component"
   ],
-  "author": "Your Name",
+  "author": "GruffDuck",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/yourusername/react-native-pizza-chart/issues"
+    "url": "https://github.com/GruffDuck/react-native-pizza-chart/issues"
   },
-  "homepage": "https://github.com/yourusername/react-native-pizza-chart#readme",
+  "homepage": "https://github.com/GruffDuck/react-native-pizza-chart#readme",
   "peerDependencies": {
     "react": ">=16.8.0",
     "react-native": ">=0.60.0",
