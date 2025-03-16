@@ -1,6 +1,6 @@
 # React Native Pizza Chart
 
-![Pizza Chart Demo](https://raw.githubusercontent.com/GruffDuck/pizzaChartKit/main/src/assets/ss.png)
+<img src="https://raw.githubusercontent.com/GruffDuck/pizzaChartKit/main/src/assets/ss.png" alt="Pizza Chart Demo" width="300" />
 
 A customizable and animated pizza chart component for React Native applications.
 
