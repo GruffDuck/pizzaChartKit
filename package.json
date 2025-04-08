@@ -20,7 +20,8 @@
     "pie-chart",
     "storage-chart",
     "animated-chart",
-    "react-native-component"
+    "react-native-component",
+    "expo"
   ],
   "author": "GruffDuck",
   "license": "MIT",
@@ -31,7 +32,8 @@
   "peerDependencies": {
     "react": ">=16.8.0",
     "react-native": ">=0.60.0",
-    "react-native-svg": ">=12.0.0"
+    "react-native-svg": ">=12.0.0",
+    "expo": ">=38.0.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.0",
