@@ -1,5 +1,6 @@
 // Export components
-export { PizzaChart } from './components/PizzaChartParts';
+import PizzaChart from './components/PizzaChartParts/PizzaChart';
+export { PizzaChart };
 
 // Export types
 export { 

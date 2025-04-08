@@ -4,6 +4,10 @@
   "description": "A customizable and animated pizza chart component for React Native",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
+  "files": [
+    "lib",
+    "src"
+  ],
   "scripts": {
     "build": "tsc",
     "prepare": "npm run build",
