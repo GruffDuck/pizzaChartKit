@@ -1,5 +1,5 @@
 // Export components
-export { StorageChart } from './components/PizzaChartParts';
+export { PizzaChart } from './components/PizzaChartParts';
 
 // Export types
 export { 

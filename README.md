@@ -12,6 +12,7 @@ A customizable and animated pizza chart component for React Native applications.
 - 🌓 Dark mode support
 - 📱 Responsive design that adapts to different screen sizes
 - ⚙️ Highly configurable with many customization options
+- 📱 Expo compatible
 
 ## Installation
 
@@ -36,13 +37,13 @@ yarn add react-native-svg
 ```jsx
 import React from 'react';
 import {View, SafeAreaView} from 'react-native';
-import {StorageChart, defaultStorageData} from 'react-native-pizza-chart';
+import {PizzaChart, defaultStorageData} from 'react-native-pizza-chart';
 
 const App = () => {
   return (
     <SafeAreaView style={{flex: 1}}>
       <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-        <StorageChart
+        <PizzaChart
           data={defaultStorageData}
           totalStorage={100}
           animationDuration={1500}
@@ -118,7 +119,7 @@ const customData = [
 ];
 
 // Then use it in your component
-<StorageChart data={customData} totalStorage={128} />;
+<PizzaChart data={customData} totalStorage={128} />;
 ```
 
 ## License

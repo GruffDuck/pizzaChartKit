@@ -16,7 +16,7 @@ import AnimatedArcPath from './AnimatedArcPath';
 import AnimatedInnerPath from './AnimatedInnerPath';
 import Legend from './Legend';
 
-const StorageChart = ({
+const PizzaChart = ({
   data,
   totalStorage = 128,
   animationDuration = 1000,
@@ -240,4 +240,4 @@ const StorageChart = ({
   );
 };
 
-export default StorageChart;
+export default PizzaChart;
