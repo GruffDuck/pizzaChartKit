@@ -1,4 +1,4 @@
-export { default as StorageChart } from './StorageChart';
+export { default as PizzaChart } from './PizzaChart';
 export { default as Legend } from './Legend';
 export { default as AnimatedArcPath } from './AnimatedArcPath';
 export { default as AnimatedInnerPath } from './AnimatedInnerPath';
