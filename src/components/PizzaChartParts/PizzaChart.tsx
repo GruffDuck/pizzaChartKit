@@ -26,6 +26,7 @@ const PizzaChart = ({
   showPizza = true, // Pizza slices are shown by default
   title = 'Storage Chart', // Default title
   emptySpaceTitle = 'Empty Space', // Default empty space title
+  unit = 'GB', // Default unit is GB
 }: StorageChartProps) => {
   const isDarkMode = useColorScheme() === 'dark';
   const [animationProgress] = useState(new Animated.Value(0));
@@ -209,7 +210,7 @@ const PizzaChart = ({
                 fontSize: centerTextFontSize,
               },
             ]}>
-            {`${displayValue} GB`}
+            {`${displayValue} ${unit}`}
           </Text>
           {showEmptySpace && (
             <Text
@@ -220,7 +221,7 @@ const PizzaChart = ({
                   fontSize: totalTextFontSize,
                 },
               ]}>
-              {`/ ${totalStorage} GB`}
+              {`/ ${totalStorage} ${unit}`}
             </Text>
           )}
         </View>
@@ -234,6 +235,7 @@ const PizzaChart = ({
           showEmptySpace={showEmptySpace}
           totalStorage={totalStorage}
           emptySpaceTitle={emptySpaceTitle}
+          unit={unit} // Pass unit prop to Legend
         />
       )}
     </View>

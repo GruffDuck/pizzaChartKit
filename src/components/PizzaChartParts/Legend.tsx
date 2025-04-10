@@ -10,6 +10,7 @@ const Legend = ({
   showEmptySpace = false,
   totalStorage = 100,
   emptySpaceTitle = 'Empty Space', // Default title for empty space
+  unit = 'GB', // Default unit is GB
 }: LegendProps) => {
   // Calculate total used space
   const totalUsed = data.reduce((total, item) => total + item.size, 0);
@@ -60,6 +61,7 @@ const Legend = ({
               index={index}
               isDarkMode={isDarkMode}
               animationDelay={index * 100 + 500} // Start after chart animation
+              unit={unit} // Pass the unit prop
             />
           );
         })}
@@ -73,6 +75,7 @@ const Legend = ({
             index={data.length}
             isDarkMode={isDarkMode}
             animationDelay={(data.length + 1) * 100 + 500} // Last animation
+            unit={unit} // Pass the unit prop
           />
         )}
       </ScrollView>

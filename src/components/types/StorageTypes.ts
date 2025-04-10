@@ -40,6 +40,7 @@ export type AnimatedLegendItemProps = {
   index: number;
   isDarkMode: boolean;
   animationDelay?: number;
+  unit?: string; // Added unit property with optional string type
 };
 
 // Legend component props
@@ -49,6 +50,7 @@ export type LegendProps = {
   showEmptySpace?: boolean;
   totalStorage?: number;
   emptySpaceTitle?: string; // New prop for empty space title
+  unit?: string; // Added unit property with optional string type
 };
 
 // StorageChart component props
@@ -62,6 +64,7 @@ export type StorageChartProps = {
   showPizza?: boolean; // Show/hide pizza slices
   title?: string; // New prop for title
   emptySpaceTitle?: string; // New prop for empty space title
+  unit?: string; // Added unit property with optional string type
 };
 
 import {Animated} from 'react-native';

@@ -9,6 +9,7 @@ const AnimatedLegendItem = ({
   percentage,
   isDarkMode,
   animationDelay = 0,
+  unit = 'GB', // Add default value 'GB' for unit parameter
 }: AnimatedLegendItemProps) => {
   const [opacity] = useState(new Animated.Value(0));
   const [translateY] = useState(new Animated.Value(20));
@@ -73,7 +74,7 @@ const AnimatedLegendItem = ({
             styles.legendSize,
             {color: isDarkMode ? '#FFFFFF' : '#333333'},
           ]}>
-          {`${item.size} GB`}
+          {`${item.size} ${unit}`}
         </Text>
         <Text
           style={[

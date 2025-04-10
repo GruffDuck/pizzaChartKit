@@ -33,6 +33,7 @@ export type AnimatedLegendItemProps = {
     index: number;
     isDarkMode: boolean;
     animationDelay?: number;
+    unit?: string;
 };
 export type LegendProps = {
     data: StorageItem[];
@@ -40,6 +41,7 @@ export type LegendProps = {
     showEmptySpace?: boolean;
     totalStorage?: number;
     emptySpaceTitle?: string;
+    unit?: string;
 };
 export type StorageChartProps = {
     data: StorageItem[];
@@ -51,5 +53,6 @@ export type StorageChartProps = {
     showPizza?: boolean;
     title?: string;
     emptySpaceTitle?: string;
+    unit?: string;
 };
 import { Animated } from 'react-native';
