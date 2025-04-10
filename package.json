@@ -1,6 +1,6 @@
 {
   "name": "react-native-pizza-chart",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "A customizable and animated pizza chart component for React Native",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
